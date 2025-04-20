@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Form</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="title">
+        <b>SIPS JUICE SURVEY FORM</b>
+      </div>
+
+      <form id="survey" name="myForm" onsubmit="return validateForm()">
+        <div id="content">
+          <p class="details">
+            <b
+              >Your response will play a vital role in enhancing your experience
+              with our product.</b
+            >
+          </p>
+          <br />
+          <label>Full Name:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="enter your name"
+            class="box"
+          />
+          <br /><br />
+          <label>Age:</label><br />
+          <input
+            type="radio"
+            id="age1"
+            name="age"
+            value="age"
+            required
+          />&nbspunder 18 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input
+            type="radio"
+            id="age2"
+            name="age"
+            value="age"
+            required
+          />&nbsp18-24<br />
+          <input
+            type="radio"
+            id="age3"
+            name="age"
+            value="age"
+            required
+          />&nbsp25-40
+          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input
+            type="radio"
+            id="age4"
+            name="age"
+            value="age"
+            required
+          />&nbsp41 and above <br /><br />
+          <label> Occupation:</label>
+          <input
+            type="text"
+            id="occupation"
+            placeholder="enter your occupation"
+            class="box"
+            name="occupation"
+          />
+          <br /><br />
+          <label>Email:</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="enter your email"
+            class="box"
+          />
+          <br /><br />
+          <label>Gender</label><br />
+          <input
+            type="radio"
+            id="female"
+            name="gender"
+            value="female"
+          />&nbspFemale &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input
+            type="radio"
+            id="male"
+            name="gender"
+            value="male"
+          />&nbspMale<br /><br />
+          <label type="dropdown"
+            >What would you say is your opinion on the branding?</label
+          >
+          <br />
+          <select id="dropdown" class="box" name="dropdown">
+            <option disabled selected value required>Select an option</option>
+            <option value="terrible">It looks terrible</option>
+            <option value="decent">It's decent but needs some work</option>
+            <option value="average">Neither good nor bad</option>
+            <option value="good">It looks good</option>
+            <option value="amazing">It looks amazing!</option>
+          </select>
+
+          <br /><br />
+          <label
+            >If you have any opinions on how to improve the branding...</label
+          ><br />
+          <textarea
+            name="opinion"
+            placeholder="Enter your opinion here"
+            class="textarea"
+          ></textarea>
+          <br /><br />
+          <label type="dropdown">What do you think about our packaging?</label>
+          <br />
+          <select id="dropdown" class="box" name="dropdown">
+            <option disabled selected value required>Select an option</option>
+            <option value="verysatisfied">
+              It's visually appealing and stands out
+            </option>
+            <option value="satisfied">
+              Its good but there's room for improvement
+            </option>
+            <option value="neutral">Neither good nor bad</option>
+            <option value="dissatisfied">
+              Not very appealing, but functional
+            </option>
+            <option value="verydissatisfied">
+              Not functional or appealing
+            </option>
+          </select>
+          <br /><br />
+          <label
+            >If you have any opinions on how to improve the packaging...</label
+          ><br />
+          <textarea
+            name="opinion"
+            placeholder="Enter your opinion here"
+            class="textarea"
+          ></textarea>
+          <br /><br />
+          <label name="check"
+            >What is your favourite SIPS flavour?(Check all that apply)</label
+          ><br /><br />
+          <input
+            type="checkbox"
+            id="flavour"
+            name="flavour"
+            value="sunburst"
+          />&nbspSunburst &nbsp&nbsp<input
+            type="checkbox"
+            id="flavour"
+            name="flavour"
+            value="iceberry"
+          />&nbspIce Berry &nbsp&nbsp<input
+            type="checkbox"
+            id="flavour"
+            name="flavour"
+            value="tropicalmint"
+          />&nbspTropical Mint <br /><br />
+          <label
+            >What factors influence your decision to purchase our juice?(Check
+            all that apply)</label
+          ><br /><br />
+          <input
+            type="checkbox"
+            id="factors"
+            name="factors"
+            value="taste"
+          />&nbspTaste &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input
+            type="checkbox"
+            id="factors"
+            name="factors"
+            value="price"
+          />&nbspPrice &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input
+            type="checkbox"
+            id="factors"
+            name="factors"
+            value="healthbenefits"
+          />&nbspHealth benefits &nbsp&nbsp&nbsp&nbsp<input
+            type="checkbox"
+            id="factors"
+            name="factors"
+            value="brandreputation"
+          />&nbspBrand reputation<br /><br />
+          <label name="check">Would you recommend SIPS to your friend?</label
+          ><br /><br />
+          <input type="radio" id="yes" name="option" value="yes" required />Of
+          course!
+          <input type="radio" id="no" name="option" value="no" required />I
+          don't think so <br /><br />
+          <label
+            >Any other comments on how we can serve you better will be
+            appreciated...</label
+          ><br />
+          <textarea
+            name="opinion"
+            placeholder="Enter your comments here"
+            class="textarea"
+          ></textarea>
+          <br /><br />
+          <label>Thank you for your input!</label><br /><br />
+          <input type="submit" id="submit" value="Submit Here" />
+        </div>
+      </form>
+    </div>
+    <script>
+      function validateForm() {
+        var name = document.forms["myForm"]["name"].value;
+        var occupation = document.forms["myForm"]["occupation"].value;
+
+        if (name == "" || occupation == "") {
+          alert("No fields should be empty!");
+          return false;
+        } else {
+          alert("Successfully logged in!");
+          return true;
+        }
+      }
+    </script>
+  </body>
+</html>
+ 
